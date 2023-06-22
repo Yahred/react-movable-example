@@ -1,0 +1,44 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    height: auto;
+    width: 100%
+}
+
+.controls {
+    display: flex;
+    gap: 2rem;
+}
+
+#parent {
+    border-radius: 12px;
+    border: solid white 1px
+}
+
+.add-button {
+    background-color: #0d7560;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    font-size: larger;
+}
+
+.destroy-button {
+    background-color: #4d070c;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    font-size: larger;
+}
+

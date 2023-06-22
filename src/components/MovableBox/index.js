@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 
 import Moveable from "react-moveable";
 
-import { getPhotoById } from "../../constant/api";
 import './styles.css';
 
 const MovableBox = ({
@@ -15,9 +14,7 @@ const MovableBox = ({
   color,
   id,
   setSelected,
-  handleResizeStart,
   isSelected = false,
-  updateEnd,
   imgId,
   onDestroy,
 }) => {
@@ -33,9 +30,6 @@ const MovableBox = ({
     id,
   });
   const [img, setImg] = useState('');
-
-  let parent = document.getElementById("parent");
-  let parentBounds = parent?.getBoundingClientRect();
 
   /**
    * Función que reacciona a los cambios de dimension de la caja
@@ -85,11 +79,11 @@ const MovableBox = ({
     } catch (error) {
       console.log(error.message)
     }
-  }, []);
+  }, [imgId]);
 
   useEffect(() => {
     fetchImage();
-  }, []);
+  }, [fetchImage]);
 
   return (
     <>
@@ -107,7 +101,7 @@ const MovableBox = ({
         }}
         onClick={() => setSelected(id)}
       >
-        <img src={img}/>
+        <img src={img} alt=""/>
         <button onClick={() => onDestroy(id)}>X</button>
       </div>
 

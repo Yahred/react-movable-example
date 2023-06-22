@@ -68,7 +68,7 @@ const Parent = () => {
         current.filter(({ id }) => id !== idRemoved)
       );
     },
-    [moveableComponents]
+    []
   );
     
   /**
